@@ -3,7 +3,7 @@ from collections import defaultdict
 from multiprocessing import Process, Queue
 
 HOST, PORT = "localhost", 5051 ##adresse und port vom server-server
-
+Max_Clients = 10
 global logger
 
 logger = logging.getLogger()
@@ -326,7 +326,7 @@ def Demon_start(): #### main Thread
 		
 		
 		TCP2Server_queue_stack = {}
-		TCP2Server_queue_stack['max_client'] = 10
+		TCP2Server_queue_stack['max_client'] = Max_Clients
 		TCP2Server_queue_stack['aktive'] = Queue() ## income TCP aktive
 		loop_count = 0
 		
