@@ -414,19 +414,19 @@ def Demon_start(): #### main Thread
 
 			while loop_count < TCP2Server_queue_stack['max_client']:
 				loop_count = loop_count + 1
-				TCP2Server_queue_stack[loop_count]['lock'].close
-				TCP2Server_queue_stack[loop_count]['ready'].close
-				TCP2Server_queue_stack[loop_count]['ready_return'].close
-				TCP2Server_queue_stack[loop_count]['data'].close
+				TCP2Server_queue_stack[loop_count]['lock'].close()
+				TCP2Server_queue_stack[loop_count]['ready'].close()
+				TCP2Server_queue_stack[loop_count]['ready_return'].close()
+				TCP2Server_queue_stack[loop_count]['data'].close()
 			
-			Io_stack[1]['data_to_server'].close
-			Io_stack[2]['data_to_client'].close
-			Io_stack[1]['data_to_server'].close
-			Io_stack[2]['data_to_client'].close
-			Io_stack[1]['lock'].close
-			Io_stack[2]['lock'].close
+			Io_stack[1]['data_to_server'].close()
+			Io_stack[2]['data_to_client'].close()
+			Io_stack[1]['data_to_server'].close()
+			Io_stack[2]['data_to_client'].close()
+			Io_stack[1]['lock'].close()
+			Io_stack[2]['lock'].close()
 			
-			demon_queue_data['close'].close
+			demon_queue_data['close'].close()
 			logging.error(json.dumps('Server Shutdown'))
 			break
 
